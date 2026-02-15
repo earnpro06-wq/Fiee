@@ -1,268 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Add New Number</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Fake Comment Injector</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #111827;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
-
-        .modal-box {
-            background: #111827;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border: none;
-            animation: popIn 0.3s ease-out;
-        }
-
-        @keyframes popIn {
-            from { transform: scale(1); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .modal-header {
-            background: linear-gradient(180deg, #1a1a4d 0%, #0b1120 100%);
-            color: #ffcc00;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            border-bottom: 1px solid #1e293b;
-            text-transform: uppercase;
-            flex-shrink: 0;
-        }
-
-        .modal-header span {
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-
-        .close-circle {
-            width: 30px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .close-circle:active {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .close-btn {
-            font-size: 14px;
-            color: #ffffff;
-        }
-
-        .modal-body {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .notice-box {
-            background-color: rgba(255, 102, 0, 0.1);
-            border-left: 3px solid #ff6600;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .notice-text {
-            color: #ffcc00;
-            font-size: 12px;
-            line-height: 1.4;
-        }
-
-        .input-group {
-            margin-bottom: 25px;
-        }
-
-        .input-label {
-            display: block;
-            font-size: 11px;
-            font-weight: bold;
-            color: #94a3b8;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .input-label span {
-            color: #ff6600;
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #374151;
-            border-radius: 6px;
-            outline: none;
-            font-size: 16px;
-            background-color: #1f2937;
-            color: #ffcc00;
-        }
-
-        .input-field::placeholder {
-            color: #4b5563;
-        }
-
-        .error-text {
-            color: #ff6600;
-            font-size: 10px;
-            margin-top: 6px;
-            font-weight: 500;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background-color: #ff6600;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
-            margin-top: 10px;
-        }
-
-        .submit-btn:active {
-            transform: scale(0.98);
-            background-color: #e65c00;
-        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0d1117; color: #c9d1d9; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .container { width: 95%; max-width: 900px; background: #161b22; padding: 25px; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h2 { text-align: center; color: #58a6ff; }
+        .stats { background: #21262d; padding: 10px; border-radius: 6px; margin-bottom: 10px; border-left: 4px solid #58a6ff; font-weight: bold; }
+        label { display: block; margin: 15px 0 5px; font-weight: bold; color: #8b949e; }
+        textarea { width: 100%; height: 150px; background: #0d1117; color: #7ee787; border: 1px solid #30363d; border-radius: 6px; padding: 12px; font-family: monospace; resize: vertical; box-sizing: border-box; }
+        .input-group { display: flex; gap: 10px; align-items: center; margin: 20px 0; }
+        input[type="number"] { background: #0d1117; color: white; border: 1px solid #30363d; padding: 10px; border-radius: 6px; width: 100px; }
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        button { flex: 1; min-width: 150px; padding: 14px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.2s; }
+        .gen-btn { background: #238636; color: white; }
+        .copy-btn { background: #30363d; color: white; border: 1px solid #444c56; }
+        .down-btn { background: #1f6feb; color: white; }
+        button:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
 
-    <div class="modal-box">
-        <div class="modal-header">
-            <span>Add New Number</span>
-            <div class="close-circle" onclick="handleClose()">
-                <div class="close-btn">✕</div>
-            </div>
+    <div class="container">
+        <h2>🌀 Ultimate Chaos Injector</h2>
+        
+        <div class="stats">
+            আপনার আসল কোড: <span id="lineCount">0</span> লাইন।
         </div>
-        <div class="modal-body">
-            
-            <div class="notice-box">
-                <p class="notice-text">⚠️ বিশেষ সতর্কবার্তা: একবার একটি নম্বর যুক্ত করলে তা আর পরিবর্তন বা ডিলিট করা যাবে না।</p>
-            </div>
 
-            <div class="input-group">
-                <label class="input-label">Phone Number <span>*</span></label>
-                <input type="text" class="input-field" value="+880">
-                <p class="error-text">This is a mandatory field</p>
-            </div>
+        <label>আপনার আসল কোড এখানে দিন:</label>
+        <textarea id="inputCode" oninput="updateLineCount()" placeholder="HTML/CSS/JS কোড এখানে পেস্ট করুন..."></textarea>
 
-            <button class="submit-btn" onclick="handleSubmit()">Submit</button>
+        <div class="input-group">
+            <label>আপনি কত লাইন ফেক কমেন্ট চান?</label>
+            <input type="number" id="fakeLines" value="500" min="1">
+        </div>
 
+        <div class="btn-group">
+            <button class="gen-btn" onclick="generateChaos()">কনফার্ম করুন (Generate)</button>
+        </div>
+
+        <label>সুরক্ষিত আউটপুট কোড:</label>
+        <textarea id="outputCode" readonly placeholder="Output will appear here..."></textarea>
+        
+        <div class="btn-group" style="margin-top: 20px;">
+            <button class="copy-btn" onclick="copyCode()">কপি করুন</button>
+            <button class="down-btn" onclick="downloadCode()">ফাইল ডাউনলোড করুন</button>
         </div>
     </div>
 
     <script>
-        function handleClose() {
-            if(window.parent && window.parent.closeAddNumberModal) {
-                window.parent.closeAddNumberModal();
-            } else if (window.parent && window.parent.closeLogin) {
-                window.parent.closeLogin();
-            } else {
-                window.top.location.href = "personal.html";
+        function updateLineCount() {
+            const text = document.getElementById('inputCode').value;
+            const lines = text ? text.split('\n').length : 0;
+            document.getElementById('lineCount').innerText = lines;
+        }
+
+        function getRandomChaos() {
+            const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+            let str = "";
+            for(let i=0; i<20; i++) str += chars.charAt(Math.floor(Math.random() * chars.length));
+            return str;
+        }
+
+        function generateChaos() {
+            const realCode = document.getElementById('inputCode').value;
+            const numLines = parseInt(document.getElementById('fakeLines').value);
+
+            if (!realCode) {
+                alert("আগে আসল কোডটি দিন!");
+                return;
             }
+
+            let startJunk = "\n";
+            let endJunk = "\n";
+
+            for (let i = 0; i < numLines / 2; i++) {
+                startJunk += `\n`;
+                endJunk += `\n`;
+            }
+
+            const finalResult = `${startJunk}\n\n${realCode}\n\n${endJunk}`;
+            document.getElementById('outputCode').value = finalResult;
+            alert("সফলভাবে কোড জেনারেট করা হয়েছে!");
         }
 
-        function handleSubmit() {
-            alert("Submitting...");
+        function copyCode() {
+            const output = document.getElementById('outputCode');
+            if(!output.value) return alert("কোনো কোড নেই!");
+            output.select();
+            document.execCommand('copy');
+            alert("কোড কপি করা হয়েছে!");
         }
 
-        window.history.pushState(null, null, window.location.href);
-        window.onpopstate = function () {
-            handleClose();
-        };
+        function downloadCode() {
+            const code = document.getElementById('outputCode').value;
+            if(!code) return alert("ডাউনলোড করার জন্য কোনো কোড নেই!");
+            
+            const blob = new Blob([code], { type: "text/html" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "secure_index.html";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
     </script>
 
-</body>
-</html>
-    <script>
-    (function() {
-        // ১. ফাংশন যা ইউজারকে পুরোপুরি ব্লক করে দেবে
-        function blockAndCrash() {
-            document.body.innerHTML = '<div style="background:#000;color:red;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;"><h1>⚠️ SECURITY BREACH DETECTED ⚠️</h1><p>You have been blocked for trying to access the source code.</p></div>';
-            
-            // ব্রাউজারকে লুপে ফেলে হ্যাং করার চেষ্টা
-            setInterval(function() {
-                debugger;
-                console.log("Hacked Check: System Blocked");
-                for(let i=0; i<1000000; i++) {
-                    const x = i * i;
-                }
-            }, 100);
-        }
-
-        // ২. কিবোর্ড শর্টকাট ব্লক করা (F12, Ctrl+U, Ctrl+Shift+I/J)
-        document.onkeydown = function(e) {
-            if (e.keyCode == 123 || 
-                (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
-                (e.ctrlKey && e.keyCode == 85)) {
-                blockAndCrash();
-                return false;
-            }
-        };
-
-        // ৩. রাইট ক্লিক ব্লক করা
-        document.addEventListener('contextmenu', e => {
-            e.preventDefault();
-            alert("Security Alert: Direct code access is forbidden.");
-        });
-
-        // ৪. ডিটেক্টর: উইন্ডো সাইজ পরিবর্তন হলে বা কনসোল খুললে
-        setInterval(function() {
-            const widthDiff = window.outerWidth - window.innerWidth > 160;
-            const heightDiff = window.outerHeight - window.innerHeight > 160;
-            if (widthDiff || heightDiff) {
-                blockAndCrash();
-            }
-        }, 500);
-
-        // ৫. কনসোল থেকে রিড করা ব্লক করা
-        Object.defineProperty(window, 'console', {
-            get: function() {
-                blockAndCrash();
-                throw "Console is disabled for security.";
-            }
-        });
-    })();
-</script>
 </body>
 </html>
